@@ -1,5 +1,4 @@
-module NormalParkingCounter(input clk, reset, entry0, exit0,output reg [4:0] normal_spaces,output normal_green, normal_red           
-);
+module NormalParking(input clk, reset, entry0, exit0,output reg [4:0] normal_spaces,output normal_green, normal_red);
     wire entry , exit;
 
   Debounce debounce_entry(clk, entry0, entry);
