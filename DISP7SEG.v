@@ -1,9 +1,9 @@
 `timescale 1ns / 1ps
 
-module sevenSegment(input [3:0] d, output reg [6:0] seg);
-always@(d)
+module sevenSegment(input [3:0] dig, output reg [6:0] seg);
+	always@(*)
 begin
-	case (d)
+	case (dig)
 		4'b0000: seg=7'b0000001;
 		4'b0001: seg=7'b1001111;
 		4'b0010: seg=7'b0010010;
