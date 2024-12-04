@@ -1,4 +1,4 @@
-module NormalParking(input clk, reset, entry0, exit0,output reg [2:0] handicap_spaces,output handicap_green, handicap_red);
+module HandicapParking(input clk, reset, entry0, exit0,output reg [2:0] handicap_spaces,output handicap_green, handicap_red);
     wire entry , exit;
 
   Debounce dentry(clk, entry0, entry);
