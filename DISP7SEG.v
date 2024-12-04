@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module decoder3to8N (input [3:0] d, output reg [7:0] seg);
+module sevenSegment(input [3:0] d, output reg [7:0] seg);
 always@(d)
 begin
 	case (d)
