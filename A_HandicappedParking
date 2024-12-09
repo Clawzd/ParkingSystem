@@ -1,0 +1,26 @@
+module HandicappedParking (input clk, input reset, input entry0, input exit0, output reg [2:0] count, output full, H_green, H_red);
+  
+  Debounce dentry(clk, entry0, entry);
+  Debounce dexit(clk, exit0, exit);
+  
+
+    parameter MAX = 5;
+
+    assign full = (count == 0);
+
+    always @(posedge clk or posedge reset)
+      begin
+        if (reset) begin
+            count <= MAX;
+        end 
+      else
+        begin
+            if (entry && count > 0) count <= count - 1;
+            if (exit && count < MAX) count <= count + 1;
+        end
+    end
+  
+  assign H_green = (count >0);
+  assign H_red = (count == 0);
+  
+endmodule
